@@ -3,6 +3,9 @@ description: NLP, Cognitive Science, HCI, and AI Interpretability
 
 remote_theme: just-the-docs/just-the-docs
 
+plugins:
+  - jekyll-remote-theme
+
 url: "https://jaehyeong8121.github.io"
 
 aux_links:

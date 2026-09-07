@@ -129,24 +129,6 @@ a { color: inherit; }
     background-color .2s ease,
     color .2s ease;
 }
-.social-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    rgba(53, 91, 74, .05),
-    rgba(88, 150, 120, .95) 28%,
-    rgba(53, 91, 74, .55) 62%,
-    rgba(53, 91, 74, 0)
-  );
-  opacity: 0;
-  transition: opacity .25s ease;
-  pointer-events: none;
-}
 .social-btn::after {
   content: "";
   position: absolute;
@@ -180,7 +162,6 @@ a { color: inherit; }
     0 8px 18px rgba(53, 91, 74, .12),
     0 0 0 1px rgba(53, 91, 74, .06);
 }
-.social-btn:hover::before,
 .social-btn:hover::after {
   opacity: 1;
 }

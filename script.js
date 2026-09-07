@@ -14,8 +14,8 @@ items.forEach((item) => observer.observe(item));
 const newsModal = document.getElementById('news-modal');
 const newsDate = document.getElementById('news-modal-date');
 const newsTitle = document.getElementById('news-modal-title');
+const newsMedia = document.getElementById('news-modal-media');
 const newsGallery = document.getElementById('news-modal-gallery');
-const newsPlaceholder = document.getElementById('news-modal-placeholder');
 const newsBody = document.getElementById('news-modal-body');
 const newsRows = document.querySelectorAll('.news-row[data-news-title]');
 
@@ -44,11 +44,9 @@ function openNewsModal(row) {
       img.alt = images.length > 1 ? `${title} (${index + 1})` : title;
       newsGallery.appendChild(img);
     });
-    newsGallery.hidden = false;
-    newsPlaceholder.hidden = true;
+    newsMedia.hidden = false;
   } else {
-    newsGallery.hidden = true;
-    newsPlaceholder.hidden = false;
+    newsMedia.hidden = true;
   }
 
   newsModal.hidden = false;

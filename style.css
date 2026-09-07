@@ -310,6 +310,20 @@ a { color: inherit; }
 }
 .authors, .pub-desc { margin: 0; font-size: 13px; line-height: 1.65; }
 .pub-desc { margin-top: 10px; color: var(--muted); }
+.pub-figure {
+  margin: 16px 0 0;
+  max-width: 420px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .72);
+}
+.pub-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 .pub-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; font-size: 12px; }
 .pub-actions a { text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
 .pub-actions span { color: var(--muted); }

@@ -196,8 +196,57 @@ a { color: inherit; }
   padding: 28px 28px 36px 88px;
   position: relative;
   border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  transition: background-color .28s ease;
 }
 .research-card:nth-child(odd) { border-right: 1px solid var(--line); }
+.research-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(53, 91, 74, .05),
+    rgba(88, 150, 120, .95) 28%,
+    rgba(53, 91, 74, .55) 62%,
+    rgba(53, 91, 74, 0)
+  );
+  opacity: 0;
+  transform: scaleX(.92);
+  transform-origin: left center;
+  transition: opacity .28s ease, transform .28s ease;
+  pointer-events: none;
+}
+.research-card::after {
+  content: "";
+  position: absolute;
+  top: -48px;
+  left: -20px;
+  width: 220px;
+  height: 140px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(53, 91, 74, .22) 0%,
+    rgba(53, 91, 74, .08) 42%,
+    rgba(53, 91, 74, 0) 72%
+  );
+  opacity: 0;
+  transition: opacity .28s ease;
+  pointer-events: none;
+}
+.research-card:hover {
+  background: rgba(230, 236, 232, .42);
+}
+.research-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.research-card:hover::after {
+  opacity: 1;
+}
 .card-index {
   position: absolute;
   top: 34px;
@@ -206,8 +255,29 @@ a { color: inherit; }
   font-size: 11px;
   transform: rotate(-90deg);
 }
-.research-card h3 {
+.research-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
   margin: 0 0 58px;
+}
+.research-icon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  margin-top: 6px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.research-icon svg {
+  width: 18px;
+  height: 18px;
+}
+.research-card h3 {
+  margin: 0;
   font-family: "Manrope", sans-serif;
   font-size: clamp(28px, 3vw, 39px);
   line-height: 1.03;
